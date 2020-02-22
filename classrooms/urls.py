@@ -10,9 +10,20 @@ urlpatterns = [
     path('classrooms/', views.classroom_list, name='classroom-list'),
     path('classrooms/<int:classroom_id>/', views.classroom_detail, name='classroom-detail'),
 
+    #path('classrooms/<int:classroom_id>/item/add/',views.item_create ,name='item-create'),
+
     path('classrooms/create', views.classroom_create, name='classroom-create'),
     path('classrooms/<int:classroom_id>/update/', views.classroom_update, name='classroom-update'),
     path('classrooms/<int:classroom_id>/delete/', views.classroom_delete, name='classroom-delete'),
+
+    path('classrooms/<int:classroom_id>/students/create', views.student_create, name='student-create'),
+
+    path('classrooms/<int:classroom_id>/students/<int:student_id>/update', views.student_update, name='student-update'),
+    path('classrooms/<int:classroom_id>/students/<int:student_id>/delete', views.student_delete, name='student-delete'),
+
+    path('signup/',views.register ,name='signup'),
+    path('signin/',views.user_login ,name='signin'),
+    path('signout/',views.user_logout ,name='signout'),
 ]
 
 if settings.DEBUG:
